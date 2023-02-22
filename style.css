@@ -42,12 +42,8 @@ body {
 }
 
 .grid {
+    width: 500px;
+    height: 500px;
     display: flex;
-    justify-content: center;
-}
-
-.square {
-    height: 8px;
-    width: 8px;
-    background-color: #F16767;
+    flex-wrap: wrap;
 }
