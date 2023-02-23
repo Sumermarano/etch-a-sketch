@@ -46,6 +46,6 @@ gridSizeButton.addEventListener('click', () => {
 const resetButton = document.querySelector('.reset');
 resetButton.addEventListener('click', resetGrid); 
 
-showGrid(22);
+showGrid(25);
 paintGrid();
 

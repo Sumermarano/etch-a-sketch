@@ -35,13 +35,8 @@ body {
     background-color: #A459D1;
 }
 
-.container {
-    padding-bottom: 16px;
-    display: flex;
-    justify-content: center;
-}
-
 .grid {
+    margin: auto;
     width: 500px;
     height: 500px;
     display: flex;
