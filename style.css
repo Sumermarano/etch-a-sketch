@@ -19,20 +19,21 @@ body {
     justify-content: center;
 }
 
-.grid-size {
+.grid-size,
+.reset,
+.black,
+.rainbow {
     padding: 10px;
     border-radius: 8px;
+    border: none;
     font-size: 16px;
     font-weight: bold;
     background-color: #A459D1;
 }
 
-.reset {
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #A459D1;
+.black,
+.rainbow {
+    background-color: white; 
 }
 
 .grid {

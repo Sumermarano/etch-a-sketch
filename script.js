@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+let black = true;
+let rainbow = false;
 
 function getGridSize() {
     const size = prompt("Grid Size x*x ? (x < 100)");
@@ -16,7 +18,7 @@ function showGrid(size) {
         square.classList.add('square');
         square.style.width = `${500/size}px`;
         square.style.height = `${500/size}px`;
-        square.style.backgroundColor = '#F16767';
+        square.style.backgroundColor = '#F5EAEA';
         grid.appendChild(square);
     }   
 }
@@ -24,8 +26,11 @@ function showGrid(size) {
 function paintGrid() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
-        square.addEventListener('mousemove', () => {
-            square.style.backgroundColor = '#F5EAEA';
+        square.addEventListener('mouseenter', () => {
+            // square.style.backgroundColor = '#F16767'; // The red-ish color
+            if (black) square.style.backgroundColor = 'black';
+            if (rainbow) square.style.backgroundColor = `${rainbowColors()}`;
+            
         });
     })
 }
@@ -33,7 +38,7 @@ function paintGrid() {
 function resetGrid() {
     const squares = document.querySelectorAll('.square');
         squares.forEach((square) => {
-            square.style.backgroundColor = '#F16767';
+            square.style.backgroundColor = '#F5EAEA';
         })
 }
 
@@ -46,6 +51,23 @@ gridSizeButton.addEventListener('click', () => {
 const resetButton = document.querySelector('.reset');
 resetButton.addEventListener('click', resetGrid); 
 
+const blackButton = document.querySelector('.black');
+blackButton.addEventListener('click', () => {
+    black = true;
+    rainbow = false;
+});
+
+const rainbowButton = document.querySelector('.rainbow');
+rainbowButton.addEventListener('click', () => {
+    rainbow = true;
+    black = false;
+});
+
 showGrid(25);
 paintGrid();
 
+
+function rainbowColors() {
+    const rainbowColors = ['red', 'orange', 'yellow', 'green', 'turquoise', 'blue', 'purple'];
+    return rainbowColors[Math.floor(Math.random() * 7)];
+}
