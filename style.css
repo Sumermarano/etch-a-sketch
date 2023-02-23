@@ -36,6 +36,9 @@ body {
     background-color: white; 
 }
 
+button:active {
+    transform: translateY(2px);
+}
 .grid {
     margin: auto;
     width: 500px;
